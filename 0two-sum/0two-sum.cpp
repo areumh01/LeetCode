@@ -3,14 +3,13 @@ public:
     vector<int> twoSum(vector<int>& nums, int target) {
         map<int,int> m;
         for(int i=0; i<nums.size(); i++){
-            m[nums[i]]++;
+            m[nums[i]] = i+1;
         }
         
         for(int i=0; i<nums.size(); i++){
-            if(m[target-nums[i]]>0){
-                int index = find(nums.begin(),nums.end(),target-nums[i])-nums.begin();
-                if(index == i) continue;
-                else return {i,index};
+            int another = target-nums[i];
+            if(m[another]!=0 && m[another]!=i+1){
+                return {i,m[another]-1};
             }
         }
         return {};
