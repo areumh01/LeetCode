@@ -27,6 +27,8 @@ public:
         if(nums[0] > 0) return {};
         
         for(int i=0; i<nums.size(); i++){
+            if(i>0 && nums[i]==nums[i-1]) continue;
+            
             int first = nums[i];
             int target = -first;
             //vector<vector<int>> a = find_twosum(i+1,target, nums);
