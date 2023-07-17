@@ -34,26 +34,24 @@ public:
             int start = i+1;
             int end = nums.size()-1;
             vector<int> tmp;
-            vector<vector<int>> result;
-        
+            
             while(start<end){
                 if(nums[start]+nums[end] < target) start++;
                 else if(nums[start]+nums[end] > target) end--;
                 else{
-                    tmp = {nums[start],nums[end]};
-                    result.push_back(tmp);
+                    answer.push_back({nums[start],nums[end], first});
                     start++;
                     end--;
                 }
             }
             
-            if(result.size()!=0){
-                for(auto e : result){
-                    e.push_back(first);
-                    sort(e.begin(),e.end());
-                    answer.push_back(e);
-                }
-            }
+           // if(result.size()!=0){
+           //     for(auto e : result){
+           //         e.push_back(first);
+           //         sort(e.begin(),e.end());
+           //         answer.push_back(e);
+           //     }
+           // }
         }
         
         sort(answer.begin(),answer.end());
