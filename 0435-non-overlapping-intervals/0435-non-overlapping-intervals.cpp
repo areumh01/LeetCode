@@ -10,10 +10,10 @@ public:
         int answer=0;
         sort(intervals.begin(), intervals.end(), comp);
 
-        int last = intervals[0][1];
+        int last = 0;
         for(int i=1; i<intervals.size(); i++){
-            if(intervals[i][0] >= last){
-                last = intervals[i][1];
+            if(intervals[i][0] >= intervals[last][1]){
+                last = i;
             }
             else answer++;
         }
