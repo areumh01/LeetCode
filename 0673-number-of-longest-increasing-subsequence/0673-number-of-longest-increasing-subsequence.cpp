@@ -20,8 +20,6 @@ public:
             }
             lsi=max(lsi,comp[i]);
         }
-        cout << comp[5] <<" "<< comp[6] <<" "<< comp[7] <<" "<< comp[8] <<" "<< comp[9] <<" "<< comp[10];
-        cout << fq[5] <<" "<< fq[6] <<" "<< fq[7] <<" "<< fq[8] <<" "<< fq[9] <<" "<< fq[10];
         for(int i=0;i<nums.size();i++){
             if(comp[i]==lsi) answer+=fq[i];
         }
