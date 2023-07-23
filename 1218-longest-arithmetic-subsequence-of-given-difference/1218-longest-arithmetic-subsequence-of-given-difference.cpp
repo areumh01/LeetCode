@@ -1,14 +1,15 @@
 class Solution {
 public:
     int longestSubsequence(vector<int>& arr, int difference) {
-        set<int> s;
+        //set<int> s;
         map<int,int> m;
         int answer=0;
         
         for(int i=arr.size()-1; i>=0; i--){
-            if(s.find(arr[i]+difference)==s.end()) m[arr[i]]=1;
+            //if(s.find(arr[i]+difference)==s.end()) m[arr[i]]=1;
+            if(m[arr[i]+difference]==0) m[arr[i]]=1;
             else m[arr[i]]=m[arr[i]+difference]+1;
-            s.insert(arr[i]);
+            //s.insert(arr[i]);
             answer=max(answer,m[arr[i]]);
         }
         
