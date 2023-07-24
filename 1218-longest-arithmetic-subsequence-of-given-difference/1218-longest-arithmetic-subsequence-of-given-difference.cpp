@@ -1,16 +1,17 @@
 class Solution {
 public:
     int longestSubsequence(vector<int>& arr, int difference) {
-        //set<int> s;
-        map<int,int> m;
+        int visited[40002]={0,};
+        int longest[40002]={0,};
         int answer=0;
         
         for(int i=arr.size()-1; i>=0; i--){
-            //if(s.find(arr[i]+difference)==s.end()) m[arr[i]]=1;
-            if(m[arr[i]+difference]==0) m[arr[i]]=1;
-            else m[arr[i]]=m[arr[i]+difference]+1;
-            //s.insert(arr[i]);
-            answer=max(answer,m[arr[i]]);
+            int current = arr[i]+20000;
+            if(!visited[current+difference]) longest[current]=1;
+            else longest[current] = longest[current+difference]+1;
+            visited[current]=1;
+            answer = max(answer,longest[current]);
+            //cout << arr[i] << " " << longest[current] << " " << answer << '\n';
         }
         
         return answer;
