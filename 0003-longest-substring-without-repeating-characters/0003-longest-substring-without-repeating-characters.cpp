@@ -8,11 +8,11 @@ public:
         int end=0;
         int answer=0;
         
-        while(start<=end && end<=s.size()-1){
+        while(end<=s.size()-1){
             if(m[s[end]]==0) m[s[end]]++;
             else{
                 m[s[end]]++;
-                cout << start << " " << end << '\n';
+                //cout << start << " " << end << '\n';
                 answer = max(answer,end-start);
                 while(start<end && m[s[end]]>1) m[s[start++]]--;
             }
