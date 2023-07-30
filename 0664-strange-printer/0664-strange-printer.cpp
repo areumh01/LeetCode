@@ -17,7 +17,7 @@ public:
     }
     
     int strangePrinter(string s) {
-        dp.assign(s.size(), vector<int>(s.size(), 0));
+        dp.assign(102, vector<int>(102, 0));
         return find_answer(0,s.size()-1, s);
     }
 };
