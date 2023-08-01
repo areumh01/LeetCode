@@ -3,7 +3,7 @@ public:
     vector<vector<int>> answer;
     int N,K;
     
-    void make_comb(int index, int counting, vector<int> nums){
+    void make_comb(int index, int counting, vector<int>& nums){
         for(int i=index+1; i<=N; i++){
             vector<int> tmp = nums;
             tmp.push_back(i);
@@ -15,7 +15,8 @@ public:
     vector<vector<int>> combine(int n, int k) {
         N=n;
         K=k;
-        make_comb(0,0,{});
+        vector<int> first = {};
+        make_comb(0,0,first);
         return answer;
     }
 };
