@@ -12,10 +12,7 @@ public:
             if(nums[mid]<=target) start=mid+1;
             else end=mid-1;
         }
-        if(nums[end]==target)
-            answer[1] = end;
-        else
-            answer[1] = -1;
+        answer[1] = end;
         
         start=0;
         end=nums.size()-1;
@@ -24,10 +21,7 @@ public:
             if(nums[mid]<target) start=mid+1;
             else end=mid-1;
         }
-        if(nums[start]==target)
-            answer[0]=start;
-        else
-            answer[0]=-1;
+        answer[0]=start;
         
         return answer;
     }
