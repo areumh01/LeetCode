@@ -25,7 +25,7 @@ public:
         ListNode* dummy = new ListNode();
         current = dummy;
         index=1;
-        cout << s.size() << " " << q.size();
+        //cout << s.size() << " " << q.size();
         while(index<size){
             ListNode* newNode;
             if(index >= left && index <= right) {
